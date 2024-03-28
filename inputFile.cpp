@@ -26,12 +26,19 @@ void takeInputExecuteTime(int &executeTime)
     std::cin >> executeTime;
 }
 
+void takeInputPriority(int &priority)
+{
+    std::cout << "Enter Priority of the Given Process: ";
+    std::cin >> priority;
+}
+
 // Function to set attributes of the current process
-void setAttributesOfCurrentProcess(Process *process, std::string name, int arrivalTime, int executeTime)
+void setAttributesOfCurrentProcess(Process *process, std::string name, int arrivalTime, int executeTime, int priority)
 {
     process->setProcessName(name);
     process->setArrivalTime(arrivalTime);
     process->setExecuteTime(executeTime);
+    process->setPriority(priority);
 }
 
 // Function to take input for processes from the user
@@ -41,15 +48,16 @@ void takeInputProcess(int numProcesses, std::vector<Process *> &processes)
     {
         Process *process = new Process(); // Create a new Process object
         std::string name;
-        int arrivalTime, executeTime;
+        int arrivalTime, executeTime, priority;
 
         // Call functions to take input for process details
         takeInputProcessName(name);
         takeInputArrivalTime(arrivalTime);
         takeInputExecuteTime(executeTime);
+        takeInputPriority(priority);
 
         // Set attributes of the current process
-        setAttributesOfCurrentProcess(process, name, arrivalTime, executeTime);
+        setAttributesOfCurrentProcess(process, name, arrivalTime, executeTime, priority);
 
         // Add the process to the vector
         processes.push_back(process);

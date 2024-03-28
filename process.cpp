@@ -28,6 +28,12 @@ void Process::setExecuteTime(int _executeTime)
     executeTime = _executeTime;
 }
 
+void Process::setPriority(int _priority)
+{
+    // Set the execution time of the process
+    priority = _priority;
+}
+
 // Getter methods implementation
 std::string Process::getProcessName()
 {
@@ -45,4 +51,10 @@ int Process::getExecuteTime()
 {
     // Get the execution time of the process
     return executeTime;
+}
+
+int Process::getPriority()
+{
+    // Get the execution time of the process
+    return priority;
 }
